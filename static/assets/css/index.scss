@@ -78,6 +78,7 @@ html {
       padding: 0;
       margin: 0;
       .navbar-brand {
+        max-width: 12rem;
       }
       .navbar-collapse {
         flex-direction: row-reverse;
@@ -105,6 +106,9 @@ html {
     flex-direction: column;
     padding: 6rem 5%;
     position: relative;
+    @include respond(phone) {
+      padding: 6rem 5rem 0 3rem;
+    }
     .background-glow {
       position: absolute;
       z-index: -1;
@@ -118,6 +122,9 @@ html {
       line-height: 1.7;
       font-family: $fontfamilyBold;
       color: $fontBlack;
+      @include respond(phone) {
+        text-align: center;
+      }
     }
     .title-desc {
       font-size: 2rem;
@@ -148,12 +155,23 @@ html {
       font-family: $fontfamilyBold;
       color: $fontBlue;
       padding-top: 5rem;
+      @include respond(phone) {
+        font-size: 2rem;
+      }
     }
   }
   .solution {
     max-width: 124em;
     margin: 0 auto;
     padding: 10rem;
+    @include respond(tab-land) {
+      padding: 10rem 0;
+      margin: 0 5rem;
+    }
+    @include respond(phone) {
+      padding: 2rem 0;
+    }
+
     .section-title {
       @include section-title();
     }
@@ -190,13 +208,22 @@ html {
         padding: 6rem 10rem;
         background: linear-gradient(to bottom, #c8e3e4, #d5d8f5);
         border-radius: 2em;
+        @include respond(tab-port) {
+          padding: 6rem 5rem;
+        }
         .main-box {
           display: flex;
           justify-content: space-between;
           align-items: center;
           gap: 0 4rem;
+          @include respond(phone) {
+            flex-direction: column;
+          }
           .left {
             width: 50%;
+            @include respond(phone) {
+              width: 100%;
+            }
             .box-title {
               @include sub-title();
             }
@@ -211,6 +238,10 @@ html {
           }
           .right {
             width: 50%;
+            @include respond(phone) {
+              width: 100%;
+              margin-top: 4rem;
+            }
             .sub-box {
               -webkit-backdrop-filter: blur(4.4px);
               backdrop-filter: blur(4.4px);
@@ -251,6 +282,9 @@ html {
     margin: 0 auto;
     padding: 10rem;
     position: relative;
+    @include respond(phone) {
+      padding: 3rem 5rem;
+    }
     .background-glow {
       position: absolute;
       z-index: -1;
@@ -272,6 +306,9 @@ html {
         align-items: center;
         grid-template-columns: 2fr 1fr 1fr;
         gap: 2rem;
+        @include respond(phone) {
+          grid-template-columns: 1fr;
+        }
         .box-1 {
           width: 80%;
           .box-title {
@@ -283,11 +320,17 @@ html {
           }
         }
         .box-2 {
+          @include respond(phone) {
+            order: -1;
+          }
           img {
             width: 40%;
           }
         }
         .box-3 {
+          @include respond(phone) {
+            display: none;
+          }
           img {
             width: 70%;
           }
@@ -301,16 +344,33 @@ html {
     border-radius: 3.3rem;
     margin: 0 auto;
     padding: 10rem;
+    @include respond(tab-land) {
+      padding: 10rem 5rem;
+      margin: 0 5rem;
+    }
+
     .section-title {
       @include sub-title();
+      @include respond(phone) {
+        text-align: center;
+      }
     }
     .main-box {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      // gap: 0 4rem;
+      gap: 0 4rem;
+      @include respond(phone) {
+        flex-direction: column;
+        align-items: center;
+      }
       .left {
         width: 60%;
+        @include respond(phone) {
+          order: 1;
+          padding-top: 5rem;
+          width: 100%;
+        }
         .content {
           @include content();
         }
@@ -331,6 +391,9 @@ html {
     max-width: 124em;
     margin: 0 auto;
     padding: 10rem 10rem 0;
+    @include respond(phone) {
+      padding: 10rem 5rem 0;
+    }
     .section-title {
       @include section-title();
       padding-bottom: 0;
@@ -348,6 +411,9 @@ html {
       justify-content: center;
       gap: 2rem 0;
       padding-top: 2rem;
+      @include respond(phone) {
+        width: 100%;
+      }
       .content-box {
         width: 100%;
         .form-content {
